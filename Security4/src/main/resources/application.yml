@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;DatabaseName=Test;SelectMethod=cursor;
+    username: sa
+    password: admin
+  mvc:
+    view:
+      prefix : classpath:/templates/
+      suffix : .html
+    
+mybatis:
+  typeAliasesPackage: com.example.demo.entity
+  mapperLocations: classpath*:com/example/demo/mapper/*.xml
+
+server:
+    port: 9999
+    servlet:
+      context-path: /demo
+      
+logging:
+  level:
+     com.example.demo.dao : debug
